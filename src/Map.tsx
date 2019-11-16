@@ -27,7 +27,8 @@ class IrelandMap extends React.Component<any, any> {
   }
 
   onEachFeature(feature: any, layer: any) {
-    const popupContent = ` <Popup><p>Customizable Popups <br />with feature information.</p><pre>Borough: <br />${feature.properties.name}</pre></Popup>`;
+    const popupContent = `<Popup></p><pre>County: <br />${feature.properties
+      .COUNTY || feature.properties.CountyName}</pre></Popup>`;
     layer.bindPopup(popupContent);
   }
 
